@@ -8,7 +8,7 @@ sass.compiler = require('node-sass');
 function compileSass() {
 	return gulp.src('./sass/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./css'));
+		.pipe(gulp.dest('./dist/css'));
 }
 
 function watchSass() {

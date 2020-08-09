@@ -1,0 +1,10 @@
+@mixin all-themes($parent) {
+
+	@each $name, $color in $theme-colors {
+		#{$parent}-#{$name} li::before {
+			background-color: $color;
+			color: color-yiq($color);
+			border-radius: 50%;
+		}
+	}
+}

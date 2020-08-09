@@ -1,0 +1,161 @@
+@import '_bootstrap-theme.scss';
+@import '_mixins.scss';
+
+$section-offset: $spacer * 4;
+
+.navbar-nav {
+
+	.nav-item {
+
+		margin-left: $spacer / 2;
+		display: inline-block;
+
+		@include media-breakpoint-up(lg) {
+			&:not(:first-child)::before {
+
+				content: '\2022';
+				color: theme-color("light");
+				margin-right: $spacer / 2;
+			}
+		}
+
+		.nav-link {
+
+			display: inline-block;
+		}
+	}
+}
+
+.offset {
+	position: relative;
+	left: 0;
+	
+	&-down {
+		@extend .offset;
+		top: $section-offset;
+	}
+	&-up {
+		@extend .offset;
+		top: -$section-offset;
+	}
+}
+
+#section-1 {
+	padding: $section-offset/2 0;
+}
+
+#section-2 {
+
+	background-color: #EBEEF5;
+	margin-top: $section-offset;
+
+	.text {
+		padding: $section-offset/1.5;
+		padding-top: $section-offset/2;
+
+		@include media-breakpoint-up(lg) {
+			box-shadow: $section-offset 0 theme-color('secondary');
+		}
+
+		@include media-breakpoint-up(md) {
+			padding-right: $section-offset;
+		}
+	}
+
+	.left-image {
+		background-image: url('https://www.placecage.com/800/400');
+		min-width: 400px;
+		min-height: 400px;
+	
+		@include media-breakpoint-up(lg) {
+		
+			&::before {
+				content: '';
+				display: block;
+				position: relative;
+				top: 400px;
+				left: 0;
+				min-height: 25px;
+				background: transparent;
+				background: radial-gradient(ellipse farthest-corner at 50% 0%, rgba(0, 0, 0, 0.2) 0%, transparent 75%);
+			}
+		}
+	}
+}
+
+#section-3 {
+
+	margin-bottom: $section-offset;
+	background-image: 
+			linear-gradient(to right, white, transparent 5% 95%, white),
+			url("https://www.placecage.com/1140/400");
+	background-repeat: no-repeat;
+	background-position-x: 50%;
+}
+
+#section-4 {
+	padding-top: $section-offset / 2;
+	margin-bottom: $section-offset * 2;
+}
+
+.modal-content {
+
+	.modal-header {
+		padding: 2rem 3rem;
+		padding-bottom: 1rem;
+		border: none;
+
+		+ .modal-body {
+			padding-top: 1.5rem;
+		}
+	}
+
+	.modal-body {
+		padding: 3rem;
+	}
+}
+
+ol.circle-dots {
+
+	counter-reset: myboat-circle-dots;
+	list-style-type: none;
+	padding-left: 0;
+
+	li {
+		margin-bottom: $spacer;
+		display: flex;
+		align-items: baseline;
+		align-content: space-between;
+
+		* {
+			flex-shrink: 1;
+		}
+	
+		&::before {
+			counter-increment: myboat-circle-dots;
+			content: counter(myboat-circle-dots);
+			display: inline;
+			min-width: $spacer * 2;
+			max-width: $spacer * 2;
+			min-height: $spacer * 2;
+			max-height: $spacer * 2;
+			border-radius: 50%;
+			margin-right: $spacer;
+			text-align: center;
+			vertical-align: baseline;
+			font-weight: bold;
+			line-height: 1.75rem;
+		}
+	}
+}
+
+@include all-themes('.circle-dots');
+
+// img[src^="https://www.placecage.com"], .left-image {
+// 	filter: brightness(0);
+// }
+
+// #section-3 {
+// 	background-image: none;
+// 	background-color: theme-color('primary-light');
+// }

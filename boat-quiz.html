@@ -39,6 +39,35 @@
 			</nav>
 		</header>
 		<main>
+			<div class="quiz-header bg-secondary-light">
+				<div class="quiz-progress bg-white">
+					<div class="complete"></div>
+					<div class="complete"></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="container pt-4 d-flex flex-column align-items-center">
+				<span class="mt-5 my-4">
+					<h2 class="text-primary-dark font-weight-bold d-inline-block">Do you like to sail&hellip;</h2>
+					<span class="question-bubble" data-toggle="tooltip" title="Unless you are a masochist you will prefer a catamaran to a monohull, so at this stage we have only listed cats">?</span>
+				</span>
+				<div class="quiz-answers">
+					<div>
+						<img class="img-fluid" src="https://picsum.photos/300/200?random=2" alt="Sailor at 60% looking petrified">
+						<span class="h4 mt-2">Like this</span>
+					</div>
+					<div>
+						<img class="img-fluid" src="https://picsum.photos/300/200?random=1" alt="Sailor sipping G&amp;T looking relaxed">
+						<span class="h4 mt-2">Like this</span>
+					</div>
+					<div>
+						<img class="img-fluid" src="https://picsum.photos/300/200?random=3" alt="Sailor sipping G&amp;T looking relaxed">
+						<span class="h4 mt-2">Like this</span>
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="bg-secondary text-light">
 			<div class="container py-3">
@@ -50,6 +79,15 @@
 			</div>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				$('[data-toggle="tooltip"][title]').tooltip({
+					placement: 'bottom',
+					offset: "-99%"
+				})
+			});
+		</script>
 	</body>
 </html>

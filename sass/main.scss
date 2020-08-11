@@ -3,6 +3,17 @@
 
 $section-offset: $spacer * 4;
 
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+}
+
 .navbar-nav {
 
 	.nav-item {
@@ -63,7 +74,7 @@ $section-offset: $spacer * 4;
 	}
 
 	.left-image {
-		background-image: url('https://www.placecage.com/800/400');
+		background-image: url('https://picsum.photos/800/400?random=1');
 		min-width: 400px;
 		min-height: 400px;
 	
@@ -88,7 +99,7 @@ $section-offset: $spacer * 4;
 	margin-bottom: $section-offset;
 	background-image: 
 			linear-gradient(to right, white, transparent 5% 95%, white),
-			url("https://www.placecage.com/1140/400");
+			url("https://picsum.photos/1920/800?random=1");
 	background-repeat: no-repeat;
 	background-position-x: 50%;
 }
@@ -150,6 +161,85 @@ ol.circle-dots {
 }
 
 @include all-themes('.circle-dots');
+
+.quiz-header {
+
+	height: $spacer * 4;
+	display: flex;
+	justify-content: space-around;
+	align-items: end
+}
+
+.quiz-progress {
+
+	float: left;
+	position: relative;
+	top: 1.5rem;
+	border: 1px solid #CCCDCF;
+	border-radius: 4rem;
+	padding: .75rem;
+	display: flex;
+	justify-content: space-around;
+	width: 12rem;
+	height: 3rem;
+
+	div {
+		width: 1.5rem;
+		height: 1.5rem;
+		border: 1px solid theme-color('secondary');
+		border-radius: 50%;
+
+		&.complete {
+			background-color: theme-color('secondary');
+		}
+	}
+}
+
+.quiz-answers {
+
+	display: flex;
+	justify-content: space-between;
+
+	div {
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 $spacer;
+	}
+}
+
+.question-bubble {
+	border: 1px solid theme-color('primary-dark');
+	color: theme-color('primary-dark');
+	display: inline-block;
+	cursor: help;
+	min-width: $spacer * 2;
+	min-height: $spacer * 2;
+	border-radius: 50%;
+	font-size: 1.25rem;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: text-bottom;
+	line-height: 1.75rem;
+	margin-left: .5rem;
+}
+
+.tooltip {
+
+	$tooltip-colour: #152751;
+
+	.arrow::before {
+		border-bottom-color: $tooltip-colour;
+	}
+
+	.tooltip-inner {
+		text-align: left;
+		padding: 1rem;
+		background-color: $tooltip-colour;
+		color: color-yiq($tooltip-colour);
+	}
+}
 
 // img[src^="https://www.placecage.com"], .left-image {
 // 	filter: brightness(0);

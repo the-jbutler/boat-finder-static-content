@@ -53,7 +53,7 @@
 					<h2 class="text-primary-dark font-weight-bold d-inline-block">Do you like to sail&hellip;</h2>
 					<span class="question-bubble" data-toggle="tooltip" title="Unless you are a masochist you will prefer a catamaran to a monohull, so at this stage we have only listed cats">?</span>
 				</span>
-				<div class="quiz-answers">
+				<div class="quiz-answers flex-column flex-md-row">
 					<div>
 						<img class="img-fluid" src="https://picsum.photos/300/200?random=2" alt="Sailor at 60% looking petrified">
 						<span class="h4 mt-2">Like this</span>
@@ -85,7 +85,8 @@
 			$(document).ready(function() {
 				$('[data-toggle="tooltip"][title]').tooltip({
 					placement: 'bottom',
-					offset: "-99%"
+					offset: "-99%",
+					trigger: 'click hover'
 				})
 			});
 		</script>

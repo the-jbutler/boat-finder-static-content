@@ -11,7 +11,7 @@
 			<nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
 				<div class="container">
 					<div class="d-block d-lg-none"></div>
-					<a class="navbar-brand" href="index.html" title="MyBoatGuru">
+					<a class="navbar-brand" href="index.html" title="My Boat Guru Homepage">
 						my<strong>boatguru</strong>
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,16 +20,16 @@
 					<div class="collapse navbar-collapse" id="header-navbar">
 						<ul class="navbar-nav ml-auto text-uppercase">
 							<li class="nav-item">
-								<a class="nav-link" href="boat-quiz.html">Find Your Boat</a>
+								<a class="nav-link" href="boat-quiz-2.html" title="Find Your Boat">Find Your Boat</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="about-us.html">About Us</a>
+								<a class="nav-link" href="about-us.html" title="About Us">About Us</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Useful Tools</a>
+								<a class="nav-link" href="#" title="Useful Tools">Useful Tools</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Feedback</a>
+								<a class="nav-link" href="#" title="Send Feedback">Feedback</a>
 							</li>
 						</ul>
 						<button type="button" class="login-button d-block d-lg-none btn btn-dark btn-block text-uppercase">Login</button>
@@ -43,16 +43,16 @@
 				<div class="container text-center">
 					<h2 class="text-dark py-4 font-weight-bold">What kind of sailing do you like to do?</h2>
 					<div class="row justify-content-center">
-						<div class="col-12 col-sm-4 col-lg-3">
+						<div class="boat-answer col-12 col-sm-4 col-lg-3">
 							<img src="https://picsum.photos/400/200?random=1" class="img-fluid" />
 							<div class="placeholder-img img-fluid"></div>
 							<div class="h5 font-weight-bold">Racing</div>
 						</div>
-						<div class="col-12 col-sm-4 col-lg-3">
+						<div class="boat-answer col-12 col-sm-4 col-lg-3">
 							<img src="https://picsum.photos/400/200?random=2" class="img-fluid" />
 							<div class="h5 font-weight-bold">Sailing</div>
 						</div>
-						<div class="col-12 col-sm-4 col-lg-3">
+						<div class="boat-answer col-12 col-sm-4 col-lg-3">
 							<img src="https://picsum.photos/400/200?random=3" class="img-fluid" />
 							<div class="h5 font-weight-bold">Cruising</div>
 						</div>
@@ -120,18 +120,17 @@
 			</section>
 			<section id="section-4">
 				<div class="container">
-					<div class="row mb-4">
-						<div class="col-12 col-lg-6">
+					<div class="row">
+						<div class="col-12 col-lg-6 mb-4 order-1">
 							<h2 class="font-weight-bold">Are we biased? Are we for real? How do we make money?</h2>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-12 col-md-6 mb-4">
+						<div class="col-md-6 order-lg-2"></div>
+						<div class="col-12 col-lg-6 order-2 order-lg-3">
 							<p>Everyone is biased in some way (we all own boats and obviously think we made brilliant choices!)</p>
 							<p>But when it comes to making good recommendations to you, we make the most money by giving you the right recommendations.</p>
 							<p>We make money because people who want to meet you will pay you for the contact.</p>
 						</div>
-						<div class="col-12 col-md-6">
+						<div class="col-12 col-lg-6 order-last">
 							<div class="bg-secondary-light text-secondary py-5 px-4">
 								<p>However we never share any information without you specifically authorising us to (no sneaky data permission statements here) and we only share your information with brokers we trust who can do the job for you. Not because we are saints, but because that is how we make money.</p>
 							</div>
@@ -203,6 +202,10 @@
 
 				$('.close-modal').click(function() {
 					$(this).parents('.modal').modal('hide');
+				});
+
+				$('.boat-answer').click(function() {
+					window.location.href = 'boat-quiz-2.html';
 				});
 			});
 		</script>

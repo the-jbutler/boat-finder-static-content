@@ -57,7 +57,7 @@ main {
 
 #section-2 {
 
-	background-color: #EBEEF5;
+	background-color: theme-color('secondary-light');
 	margin-top: $section-offset;
 
 	.text {
@@ -97,8 +97,9 @@ main {
 #section-3 {
 
 	margin-bottom: $section-offset;
+	background-color: theme-color('primary-light');
 	background-image: 
-			linear-gradient(to right, white, transparent 5% 95%, white),
+			linear-gradient(to right, white, transparent 1% 99%, white),
 			url("https://picsum.photos/1920/800?random=1");
 	background-repeat: no-repeat;
 	background-position-x: 50%;
@@ -164,30 +165,56 @@ ol.circle-dots {
 
 .quiz-header {
 
-	height: $spacer * 4;
+	height: $spacer * 3;
 	display: flex;
 	justify-content: space-around;
-	align-items: end
+	align-items: end;
+
+	@include media-breakpoint-up(md) {
+		height: $spacer * 4;
+	}
 }
 
 .quiz-progress {
 
-	float: left;
 	position: relative;
-	top: 1.5rem;
+	top: 1.25rem;
 	border: 1px solid #CCCDCF;
 	border-radius: 4rem;
-	padding: .75rem;
+	padding: .5rem;
 	display: flex;
 	justify-content: space-around;
-	width: 12rem;
-	height: 3rem;
+	align-items: center;
+	height: 2.5rem;
+
+	@include media-breakpoint-up(md) {
+		top: 1.5rem;
+		padding: .75rem;
+		height: 3rem;
+	}
 
 	div {
-		width: 1.5rem;
-		height: 1.5rem;
+		min-width: 1.25rem;
+		max-width: 1.25rem;
+		min-height: 1.25rem;
+		max-height: 1.25rem;
 		border: 1px solid theme-color('secondary');
 		border-radius: 50%;
+
+		&:not(:last-child) {
+			margin-right: .35rem;
+		}
+
+		@include media-breakpoint-up(md) {
+			min-width: 1.5rem;
+			max-width: 1.5rem;
+			min-height: 1.5rem;
+			max-height: 1.5rem;
+
+			&:not(:last-child) {
+				margin-right: .5rem;
+			}
+		}
 
 		&.complete {
 			background-color: theme-color('secondary');
@@ -210,6 +237,10 @@ ol.circle-dots {
 	}
 }
 
+.boat-answer {
+	cursor: pointer;
+}
+
 .question-bubble {
 	border: 1px solid theme-color('primary-dark');
 	color: theme-color('primary-dark');
@@ -226,19 +257,19 @@ ol.circle-dots {
 	margin-left: .5rem;
 }
 
-.tooltip {
+.tippy-content {
 
-	$tooltip-colour: #152751;
+	padding: 1rem;
+}
 
-	.arrow::before {
-		border-bottom-color: $tooltip-colour;
-	}
+.force-front {
+	z-index: 1200;
+}
 
-	.tooltip-inner {
-		text-align: left;
-		padding: 1rem;
-		background-color: $tooltip-colour;
-		color: color-yiq($tooltip-colour);
+@each $name, $color in $theme-colors {
+	.tippy-box[data-theme~='#{$name}'] {
+		background-color: $color;
+		color: color-yiq($color);
 	}
 }
 

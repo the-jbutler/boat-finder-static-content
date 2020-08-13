@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<link rel="stylesheet" href="./dist/css/main.css" >
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+				<div class="container">
+					<div class="d-block d-lg-none"></div>
+					<a class="navbar-brand" href="index.html" title="My Boat Guru Homepage">
+						my<strong>boatguru</strong>
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="header-navbar">
+						<ul class="navbar-nav ml-auto text-uppercase">
+							<li class="nav-item active">
+								<a class="nav-link" href="boat-quiz-2.html" title="Find Your Boat">Find Your Boat</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about-us.html" title="About Us">About Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#" title="Useful Tools">Useful Tools</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#" title="Send Feedback">Feedback</a>
+							</li>
+						</ul>
+						<button type="button" class="login-button d-block d-lg-none btn btn-dark btn-block text-uppercase">Login</button>
+						<button type="button" class="login-button d-none d-lg-inline-block ml-lg-4 btn btn-dark text-uppercase">Login</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="quiz-header bg-secondary-light">
+				<div class="quiz-progress bg-white">
+					<div class="complete"></div>
+					<div class="complete"></div>
+					<div class="complete"></div>
+					<div class="complete"></div>
+					<div class="complete"></div>
+				</div>
+			</div>
+			<div class="container pt-3 pt-md-4 mb-5 d-flex flex-column align-items-center">
+				<span class="mt-5 my-4">
+					<h2 class="text-primary-dark font-weight-bold d-inline-block">And some key questions&hellip;</h2>
+				</span>
+				<form method="GET" action="#">
+					<div class="form-group row justify-content-between align-items-center">
+						<div class="col-12 col-sm-6 col-md-8">
+							<label for="budget"><strong>Do you have a hard budget</strong><small class="d-block d-md-inline"><span class="d-none d-md-inline"> - </span>A number you simply cannot go over</small></label>
+						</div>
+						<div class="col-12 col-sm-6 col-md-4">
+							<input type="text" id="budget" name="budget" class="form-control form-control-lg" placeholder="$500,000" />
+						</div>
+					</div>
+					<div class="form-group row justify-content-between align-items-center">
+						<div class="col-12 col-sm-6 col-md-8">
+							<label for="your-location"><strong>Your location</strong></label>
+						</div>
+						<div class="col-12 col-sm-6 col-md-4">
+							<select id="your-location" name="yourLocation" class="form-control form-control-lg">
+								<option value="UK">UK</option>
+								<option value="US">USA</option>
+								<option value="ES">Spain</option>
+								<option value="FR">France</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row justify-content-between align-items-center">
+						<div class="col-12 col-sm-6 col-md-8">
+							<label for="sailing-location"><strong>Where you plan to do your sailing</strong></label>
+						</div>
+						<div class="col-12 col-sm-6 col-md-4">
+							<select id="sailing-location" name="sailingLocation" class="form-control form-control-lg">
+								<option value="UK">UK</option>
+								<option value="US">USA</option>
+								<option value="ES">Spain</option>
+								<option value="FR">France</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row justify-content-between align-items-center">
+						<div class="col-12 col-sm-6 col-md-8">
+							<label for="urgency"><strong>Urgency</strong></label>
+						</div>
+						<div class="col-12 col-sm-6 col-md-4">
+							<select id="urgency" name="urgency" class="form-control form-control-lg">
+								<option value="1">I want it NOW!</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group mt-5 row justify-content-end">
+						<div class="col-12 col-sm-6 col-md-5">
+							<button type="submit" class="btn btn-lg btn-block btn-primary-dark py-3">Show me the boats</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer class="bg-secondary text-light">
+			<div class="container py-3">
+				<svg class="d-inline-block" width="80" height="40" xmlns="http://www.w3.org/2000/svg">
+					<path d="M 0 15 q 0 -5, 10 0 t 20 0 t 20 0 t 20 0 m 20 0" stroke="white" stroke-width="4px" fill="transparent"/>
+					<path d="M 0 25 q 0 -5, 10 0 t 20 0 t 20 0 t 20 0 m 20 0" stroke="white" stroke-width="4px" fill="transparent"/>
+				</svg>
+				Copyright Boatfinder 2020
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/@popperjs/core@2" integrity="sha384-uLHxgwX6ZvC6FoWIhzkulUpK8rYAiK30nm034ygkllTGvodI+uL6V5an1iTvrLIL" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/tippy.js@6" integrity="sha384-Uyge8HSDOiuf3GlsuWf4AHG1CuoLCzHhW7NTYbeW7jwWXQQEDSvOrsl6tzxx9w2I" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				tippy('[data-tippy-content]', {
+					theme: 'secondary-dark',
+					trigger: 'mouseenter click',
+					placement: 'bottom'
+				});
+
+				$('.boat-answer').click(function() {
+					window.location.href = 'boat-quiz-3.html';
+				});
+			});
+		</script>
+	</body>
+</html>

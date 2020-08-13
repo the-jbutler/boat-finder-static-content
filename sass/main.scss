@@ -3,6 +3,17 @@
 
 $section-offset: $spacer * 4;
 
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
+
+main {
+	flex-grow: 1;
+}
+
 .navbar-nav {
 
 	.nav-item {
@@ -46,7 +57,7 @@ $section-offset: $spacer * 4;
 
 #section-2 {
 
-	background-color: #EBEEF5;
+	background-color: theme-color('secondary-light');
 	margin-top: $section-offset;
 
 	.text {
@@ -63,7 +74,7 @@ $section-offset: $spacer * 4;
 	}
 
 	.left-image {
-		background-image: url('https://www.placecage.com/800/400');
+		background-image: url('https://picsum.photos/800/400?random=1');
 		min-width: 400px;
 		min-height: 400px;
 	
@@ -86,9 +97,10 @@ $section-offset: $spacer * 4;
 #section-3 {
 
 	margin-bottom: $section-offset;
+	background-color: theme-color('primary-light');
 	background-image: 
-			linear-gradient(to right, white, transparent 5% 95%, white),
-			url("https://www.placecage.com/1140/400");
+			linear-gradient(to right, white, transparent 1% 99%, white),
+			url("https://picsum.photos/1920/800?random=1");
 	background-repeat: no-repeat;
 	background-position-x: 50%;
 }
@@ -150,6 +162,116 @@ ol.circle-dots {
 }
 
 @include all-themes('.circle-dots');
+
+.quiz-header {
+
+	height: $spacer * 3;
+	display: flex;
+	justify-content: space-around;
+	align-items: end;
+
+	@include media-breakpoint-up(md) {
+		height: $spacer * 4;
+	}
+}
+
+.quiz-progress {
+
+	position: relative;
+	top: 1.25rem;
+	border: 1px solid #CCCDCF;
+	border-radius: 4rem;
+	padding: .5rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 2.5rem;
+
+	@include media-breakpoint-up(md) {
+		top: 1.5rem;
+		padding: .75rem;
+		height: 3rem;
+	}
+
+	div {
+		min-width: 1.25rem;
+		max-width: 1.25rem;
+		min-height: 1.25rem;
+		max-height: 1.25rem;
+		border: 1px solid theme-color('secondary');
+		border-radius: 50%;
+
+		&:not(:last-child) {
+			margin-right: .35rem;
+		}
+
+		@include media-breakpoint-up(md) {
+			min-width: 1.5rem;
+			max-width: 1.5rem;
+			min-height: 1.5rem;
+			max-height: 1.5rem;
+
+			&:not(:last-child) {
+				margin-right: .5rem;
+			}
+		}
+
+		&.complete {
+			background-color: theme-color('secondary');
+		}
+	}
+}
+
+.quiz-answers {
+
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 4rem;
+
+	div {
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 $spacer;
+	}
+}
+
+.boat-answer {
+	cursor: pointer;
+}
+
+.question-bubble {
+	border: 1px solid theme-color('primary-dark');
+	color: theme-color('primary-dark');
+	display: inline-block;
+	cursor: help;
+	min-width: $spacer * 2;
+	min-height: $spacer * 2;
+	border-radius: 50%;
+	font-size: 1.25rem;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: text-bottom;
+	line-height: 1.75rem;
+	margin-left: .5rem;
+}
+
+.tippy-content {
+
+	padding: 1rem;
+}
+
+.force-front {
+	z-index: 1200;
+}
+
+@each $name, $color in $theme-colors {
+	.tippy-box[data-theme~='#{$name}'] {
+		background-color: $color;
+		color: color-yiq($color);
+	}
+}
 
 // img[src^="https://www.placecage.com"], .left-image {
 // 	filter: brightness(0);

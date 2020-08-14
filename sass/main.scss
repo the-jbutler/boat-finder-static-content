@@ -174,97 +174,6 @@ ol.circle-dots {
 
 		height: $spacer * 4;
 	}
-
-	ol, ul {
-
-		margin-bottom: 0;
-
-		li {
-
-			display: inline-block;
-
-			span {
-				display: inline;
-			}
-
-			&::before {
-
-				background-color: theme-color('light');
-				color: theme-color('secondary');
-				margin-right: 0;
-	
-				@include media-breakpoint-up(sm) {
-				
-					margin-right: $spacer;
-				}
-			}
-
-			&.active, &.complete {
-			
-				&::before {
-
-					background-color: theme-color('secondary');
-					color: theme-color('light');
-					margin-right: $spacer / 2;
-		
-					@include media-breakpoint-up(sm) {
-					
-						margin-right: $spacer;
-					}
-				}
-
-				span {
-					font-weight: bold;
-				}
-			}
-				
-			&.complete::before {
-
-				content: '\2714';
-				color: transparent;
-				text-shadow: 0 0 0 theme-color('light');
-			}
-	
-			@include media-breakpoint-down(sm) {
-			
-				margin-bottom: .5rem;
-
-				span {
-					display: none;
-				}
-
-				&.active span {
-					display: inline;
-				}
-			}
-
-			&:not(:last-child)::after {
-
-				content: '';
-				width: .5rem;
-				display: inline-block;
-				border-top: .15rem solid theme-color('secondary');
-				position: relative;
-				top: -.25rem;
-				margin-left: .5rem;
-				margin-right: .5rem;
-	
-				@include media-breakpoint-up(sm) {
-				
-					width: 2rem;
-					margin-left: 1rem;
-					margin-right: 1rem;
-				}
-	
-				@include media-breakpoint-up(md) {
-				
-					width: 3rem;
-					margin-left: 1.5rem;
-					margin-right: 1.5rem;
-				}
-			}
-		}
-	}
 }
 
 .quiz-progress {
@@ -316,6 +225,101 @@ ol.circle-dots {
 		&.complete {
 
 			background-color: theme-color('secondary');
+		}
+	}
+}
+
+ol.step-progress {
+
+	@extend .circle-dots;
+	@extend .circle-dots-light;
+	@extend .text-secondary;
+
+	margin-bottom: 0;
+
+	li {
+
+		display: inline-block;
+
+		span {
+			display: inline;
+		}
+
+		&::before {
+
+			background-color: theme-color('light');
+			color: theme-color('secondary');
+			margin-right: 0;
+
+			@include media-breakpoint-up(sm) {
+			
+				margin-right: $spacer;
+			}
+		}
+
+		&.active, &.complete {
+		
+			&::before {
+
+				background-color: theme-color('secondary');
+				color: theme-color('light');
+				margin-right: $spacer / 2;
+	
+				@include media-breakpoint-up(sm) {
+				
+					margin-right: $spacer;
+				}
+			}
+
+			span {
+				font-weight: bold;
+			}
+		}
+			
+		&.complete::before {
+
+			content: '\2714';
+			color: transparent;
+			text-shadow: 0 0 0 theme-color('light');
+		}
+
+		@include media-breakpoint-down(sm) {
+		
+			margin-bottom: .5rem;
+
+			span {
+				display: none;
+			}
+
+			&.active span {
+				display: inline;
+			}
+		}
+
+		&:not(:last-child)::after {
+
+			content: '';
+			width: .5rem;
+			display: inline-block;
+			border-top: .15rem solid theme-color('secondary');
+			position: relative;
+			top: -.25rem;
+			margin-left: .5rem;
+			margin-right: .5rem;
+
+			@include media-breakpoint-up(sm) {
+			
+				width: 2rem;
+				margin-left: 1rem;
+				margin-right: 1rem;
+			}
+
+			@include media-breakpoint-up(md) {
+			
+				width: 3rem;
+				margin-left: 1.5rem;
+				margin-right: 1.5rem;
+			}
 		}
 	}
 }

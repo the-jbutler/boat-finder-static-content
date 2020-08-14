@@ -4,7 +4,6 @@
 		#{$parent}-#{$name} li::before {
 			background-color: $color;
 			color: color-yiq($color);
-			border-radius: 50%;
 		}
 	}
 }

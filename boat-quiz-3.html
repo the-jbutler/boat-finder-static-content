@@ -52,7 +52,6 @@
 				<span class="mt-5 my-4">
 					<h2 class="text-primary-dark font-weight-bold">
 						What kind of sailing do you want to do?
-						<span class="question-bubble" data-tippy-content="">?</span>
 					</h2>
 				</span>
 				<div class="quiz-answers flex-column flex-md-row">
@@ -99,11 +98,6 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script>
 			$(document).ready(function() {
-				tippy('[data-tippy-content]', {
-					theme: 'secondary-dark',
-					trigger: 'mouseenter click',
-					placement: 'bottom'
-				});
 				$('.boat-answer').click(function() {
 					window.location.href = 'key-questions.html';
 				});

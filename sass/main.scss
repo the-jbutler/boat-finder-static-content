@@ -508,26 +508,29 @@ ol.step-progress {
 	}
 }
 
-svg.waves {
+svg {
 
-	display: inline-block;
-	width: 80px;
-	height: 40px;
+	&.waves {
 
-	&-lg {
-		width: 200px;
+		display: inline-block;
+		width: 80px;
 		height: 40px;
-	}
 
-	@each $name, $color in $theme-colors {
-		&-#{$name} path {
-			stroke: $color;
+		&-lg {
+			width: 200px;
+			height: 40px;
 		}
-	}
 
-	path {
-		stroke-width: 4px;
-		fill: transparent;
+		@each $name, $color in $theme-colors {
+			&-#{$name} path {
+				stroke: $color;
+			}
+		}
+
+		path {
+			stroke-width: 4px;
+			fill: transparent;
+		}
 	}
 }
 

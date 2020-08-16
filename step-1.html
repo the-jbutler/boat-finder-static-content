@@ -65,23 +65,33 @@
 							<div class="mt-2 mb-4 flex-grow-1 d-flex flex-wrap align-content-start align-items-start feature-filters">
 								<small>
 									Too big
-									<button type="button" class="btn btn-sm">X</button>
+									<button type="button" class="close" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</small>
 								<small>
 									Too small
-									<button type="button" class="btn btn-sm">X</button>
+									<button type="button" class="close" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</small>
 								<small>
 									Waaaaay out of your price range
-									<button type="button" class="btn btn-sm">X</button>
+									<button type="button" class="close" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</small>
 								<small>
 									Need Olga Kurylenko as crew
-									<button type="button" class="btn btn-sm">X</button>
+									<button type="button" class="close" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</small>
 								<small>
 									Only good for entertaining &hyphen; can’t sail for shit
-									<button type="button" class="btn btn-sm">X</button>
+									<button type="button" class="close" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</small>
 							</div>
 							<button type="button" name="next-page" class="btn btn-block btn-lg btn-primary-dark">Next Step</button>
@@ -111,7 +121,7 @@
 					placement: 'bottom'
 				});
 
-				$('.feature-filters .btn').click(function() {
+				$('.feature-filters .close').click(function() {
 					$(this).parents('small').remove();
 				});
 

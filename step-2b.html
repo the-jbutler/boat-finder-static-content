@@ -54,8 +54,13 @@
 				</ol>
 			</div>
 			<div class="container pt-3 pt-md-4 mb-5">
-				<h2 class="text-primary-dark font-weight-bold mb-5">Compare your chosen boats</h2>
-				<button type="button" name="next-page" class="btn btn-block btn-lg btn-primary-dark">Choose the boats to compare</button>
+				<h2 class="text-primary-dark font-weight-bold mb-4 mb-lg-5">Compare your chosen boats</h2>
+				<div class="choose-boats d-flex flex-column flex-lg-row pb-4 circle-dots-primary-dark"></div>
+				<h3 class="text-primary-dark mt-3">Comparison by</h3>
+				<div>
+				</div>
+				<button type="button" name="next-page" class="stick-above-footer d-block d-lg-none btn btn-block btn-lg btn-primary-dark py-3 px-4">How do I afford the boat I want?</button>
+				<button type="button" name="next-page" class="stick-above-footer d-none d-lg-inline-block btn btn-lg btn-primary-dark py-3 px-4">How do I afford the boat I want?</button>
 			</div>
 		</main>
 		<footer class="bg-secondary text-light">
@@ -86,7 +91,50 @@
 				$('[name="next-page"]').click(function() {
 					window.location.href = 'step-3.html';
 				});
+
+				$(document).on('click', '.header > .close', function() {
+					$(this).parents('.header').parent('div').remove();
+				});
+
+				let chooseBoatTemplate = document.getElementById('choose-boat-template');
+				let chooseBoatEl = document.querySelector('.choose-boats');
+				for (var i = 1; i <= 5; i++) {
+					let tpl = chooseBoatTemplate.content.firstElementChild.cloneNode(true);
+					let imgSrc = `https://picsum.photos/500/400?random=${i}`;
+					tpl.querySelector('img').setAttribute('src', imgSrc);
+					chooseBoatEl.append(tpl);
+				}
 			});
 		</script>
+		<template id="choose-boat-template">
+			<div class="w-20">
+				<div class="header mb-2 d-flex align-items-baseline circle-dots">
+					<span class="circle-dot"></span>
+					<strong class="text-primary-dark flex-grow-1">Catana 47</strong>
+					<button type="button" class="close" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="row no-gutters body align-items-between">
+					<div class="col-6 col-sm-4 col-lg-12">
+						<img class="img-fluid pr-4 pr-lg-0" src="">
+					</div>
+					<div class="col col-lg-12 d-flex flex-column">
+						<small class="short-info flex-grow-1">The benchmark for long distance cruising</small>
+						<div class="row justify-content-between">
+							<strong class="col-auto">Length</strong>
+							<strong class="col-auto">40&quot;</strong>
+							<div class="w-100"></div>
+							<strong class="col-auto">Weight</strong>
+							<strong class="col-auto">7 tonnes</strong>
+							<div class="w-100"></div>
+							<strong class="col-auto">Cost</strong>
+							<strong class="col-auto">&dollar;300,000</strong>
+						</div>
+					</div>
+					<div class="w-100 mt-2 border-bottom"></div>
+				</div>
+			</div>
+		</template>
 	</body>
 </html>

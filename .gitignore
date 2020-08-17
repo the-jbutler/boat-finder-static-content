@@ -134,7 +134,8 @@ dist
 Screenshots/
 timekeeping.txt
 
-!dist/css
+dist/*
+!dist/css/*.css
 *.json
 *.js
 sass

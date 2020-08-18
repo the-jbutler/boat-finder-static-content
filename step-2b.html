@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<header>
-			<nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-header py-3 py-3">
 				<div class="container">
 					<div class="d-block d-lg-none"></div>
 					<a class="navbar-brand" href="index.html" title="My Boat Guru Homepage">
@@ -32,8 +32,8 @@
 								<a class="nav-link" href="#" title="Send Feedback">Feedback</a>
 							</li>
 						</ul>
-						<button type="button" class="login-button d-block d-lg-none btn btn-dark btn-block text-uppercase">Login</button>
-						<button type="button" class="login-button d-none d-lg-inline-block ml-lg-4 btn btn-dark text-uppercase">Login</button>
+						<button type="button" class="login-button d-block d-lg-none btn btn-primary-dark btn-block text-uppercase">Login</button>
+						<button type="button" class="login-button d-none d-lg-inline-block ml-lg-4 btn btn-primary-dark text-uppercase">Login</button>
 					</div>
 				</div>
 			</nav>
@@ -47,7 +47,7 @@
 				</ol>
 			</div>
 			<div class="container pt-3 pt-md-4 mb-5">
-				<h2 class="text-primary-dark font-weight-bold mb-4 mb-lg-5">Compare your chosen boats</h2>
+				<h2 class="mb-4 mb-lg-5">Compare your chosen boats</h2>
 				<div class="choose-boats d-flex flex-column flex-lg-row pb-4 circle-dots-primary-dark"></div>
 				<h3 class="text-primary-dark mt-3">Comparison by</h3>
 				<div class="row">
@@ -78,7 +78,7 @@
 		</main>
 		<footer class="bg-secondary text-light">
 			<div class="container py-3">
-				<svg class="waves waves-light" xmlns="http://www.w3.org/2000/svg">
+				<svg class="waves waves-sm waves-light" xmlns="http://www.w3.org/2000/svg">
 					<path d="M 0 15 q 0 -5, 10 0 t 20 0 t 20 0 t 20 0 m 20 0" />
 					<path d="M 0 25 q 0 -5, 10 0 t 20 0 t 20 0 t 20 0 m 20 0" />
 				</svg>
@@ -86,17 +86,9 @@
 			</div>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://unpkg.com/@popperjs/core@2" integrity="sha384-uLHxgwX6ZvC6FoWIhzkulUpK8rYAiK30nm034ygkllTGvodI+uL6V5an1iTvrLIL" crossorigin="anonymous"></script>
-		<script src="https://unpkg.com/tippy.js@6" integrity="sha384-Uyge8HSDOiuf3GlsuWf4AHG1CuoLCzHhW7NTYbeW7jwWXQQEDSvOrsl6tzxx9w2I" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script>
 			$(document).ready(function() {
-				tippy('[data-tippy-content]', {
-					theme: 'secondary-dark',
-					trigger: 'mouseenter click',
-					placement: 'bottom'
-				});
-
 				$('.feature-filters .btn').click(function() {
 					$(this).parents('small').remove();
 				});
@@ -113,7 +105,7 @@
 				let chooseBoatEl = document.querySelector('.choose-boats');
 				for (var i = 1; i <= 5; i++) {
 					let tpl = chooseBoatTemplate.content.firstElementChild.cloneNode(true);
-					let imgSrc = `https://picsum.photos/500/400?random=${i}`;
+					let imgSrc = `https://picsum.photos/500/300?random=${i}`;
 					tpl.querySelector('img').setAttribute('src', imgSrc);
 					chooseBoatEl.append(tpl);
 				}

@@ -1,3 +1,129 @@
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-Thin.eot");
+  src: url("../fonts/Metropolis-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-Thin.svg#Metropolis-Thin") format("svg"), url("../fonts/Metropolis-Thin.ttf") format("truetype"), url("../fonts/Metropolis-Thin.woff") format("woff"), url("../fonts/Metropolis-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-ExtraLight.eot");
+  src: url("../fonts/Metropolis-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-ExtraLight.svg#Metropolis-ExtraLight") format("svg"), url("../fonts/Metropolis-ExtraLight.ttf") format("truetype"), url("../fonts/Metropolis-ExtraLight.woff") format("woff"), url("../fonts/Metropolis-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-Light.eot");
+  src: url("../fonts/Metropolis-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-Light.svg#Metropolis-Light") format("svg"), url("../fonts/Metropolis-Light.ttf") format("truetype"), url("../fonts/Metropolis-Light.woff") format("woff"), url("../fonts/Metropolis-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-Regular.eot");
+  src: url("../fonts/Metropolis-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-Regular.svg#Metropolis-Regular") format("svg"), url("../fonts/Metropolis-Regular.ttf") format("truetype"), url("../fonts/Metropolis-Regular.woff") format("woff"), url("../fonts/Metropolis-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-Medium.eot");
+  src: url("../fonts/Metropolis-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-Medium.svg#Metropolis-Medium") format("svg"), url("../fonts/Metropolis-Medium.ttf") format("truetype"), url("../fonts/Metropolis-Medium.woff") format("woff"), url("../fonts/Metropolis-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-SemiBold.eot");
+  src: url("../fonts/Metropolis-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-SemiBold.svg#Metropolis-SemiBold") format("svg"), url("../fonts/Metropolis-SemiBold.ttf") format("truetype"), url("../fonts/Metropolis-SemiBold.woff") format("woff"), url("../fonts/Metropolis-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-Bold.eot");
+  src: url("../fonts/Metropolis-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-Bold.svg#Metropolis-Bold") format("svg"), url("../fonts/Metropolis-Bold.ttf") format("truetype"), url("../fonts/Metropolis-Bold.woff") format("woff"), url("../fonts/Metropolis-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-ExtraBold.eot");
+  src: url("../fonts/Metropolis-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-ExtraBold.svg#Metropolis-ExtraBold") format("svg"), url("../fonts/Metropolis-ExtraBold.ttf") format("truetype"), url("../fonts/Metropolis-ExtraBold.woff") format("woff"), url("../fonts/Metropolis-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-Black.eot");
+  src: url("../fonts/Metropolis-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-Black.svg#Metropolis-Black") format("svg"), url("../fonts/Metropolis-Black.ttf") format("truetype"), url("../fonts/Metropolis-Black.woff") format("woff"), url("../fonts/Metropolis-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-ThinItalic.eot");
+  src: url("../fonts/Metropolis-ThinItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-ThinItalic.svg#Metropolis-Thin") format("svg"), url("../fonts/Metropolis-ThinItalic.ttf") format("truetype"), url("../fonts/Metropolis-ThinItalic.woff") format("woff"), url("../fonts/Metropolis-ThinItalic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-ExtraLightItalic.eot");
+  src: url("../fonts/Metropolis-ExtraLightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-ExtraLightItalic.svg#Metropolis-ExtraLightItalic") format("svg"), url("../fonts/Metropolis-ExtraLightItalic.ttf") format("truetype"), url("../fonts/Metropolis-ExtraLightItalic.woff") format("woff"), url("../fonts/Metropolis-ExtraLightItalic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-LightItalic.eot");
+  src: url("../fonts/Metropolis-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-LightItalic.svg#Metropolis-LightItalic") format("svg"), url("../fonts/Metropolis-LightItalic.ttf") format("truetype"), url("../fonts/Metropolis-LightItalic.woff") format("woff"), url("../fonts/Metropolis-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-RegularItalic.eot");
+  src: url("../fonts/Metropolis-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-RegularItalic.svg#Metropolis-RegularItalic") format("svg"), url("../fonts/Metropolis-RegularItalic.ttf") format("truetype"), url("../fonts/Metropolis-RegularItalic.woff") format("woff"), url("../fonts/Metropolis-RegularItalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-MediumItalic.eot");
+  src: url("../fonts/Metropolis-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-MediumItalic.svg#Metropolis-MediumItalic") format("svg"), url("../fonts/Metropolis-MediumItalic.ttf") format("truetype"), url("../fonts/Metropolis-MediumItalic.woff") format("woff"), url("../fonts/Metropolis-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-SemiBoldItalic.eot");
+  src: url("../fonts/Metropolis-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-SemiBoldItalic.svg#Metropolis-SemiBoldItalic") format("svg"), url("../fonts/Metropolis-SemiBoldItalic.ttf") format("truetype"), url("../fonts/Metropolis-SemiBoldItalic.woff") format("woff"), url("../fonts/Metropolis-SemiBoldItalic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-BoldItalic.eot");
+  src: url("../fonts/Metropolis-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-BoldItalic.svg#Metropolis-BoldItalic") format("svg"), url("../fonts/Metropolis-BoldItalic.ttf") format("truetype"), url("../fonts/Metropolis-BoldItalic.woff") format("woff"), url("../fonts/Metropolis-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-ExtraBoldItalic.eot");
+  src: url("../fonts/Metropolis-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-ExtraBoldItalic.svg#Metropolis-ExtraBoldItalic") format("svg"), url("../fonts/Metropolis-ExtraBoldItalic.ttf") format("truetype"), url("../fonts/Metropolis-ExtraBoldItalic.woff") format("woff"), url("../fonts/Metropolis-ExtraBoldItalic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url("../fonts/Metropolis-BlackItalic.eot");
+  src: url("../fonts/Metropolis-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis-BlackItalic.svg#Metropolis-BlackItalic") format("svg"), url("../fonts/Metropolis-BlackItalic.ttf") format("truetype"), url("../fonts/Metropolis-BlackItalic.woff") format("woff"), url("../fonts/Metropolis-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic; }
+
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -36,7 +162,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1080px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: Metropolis;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -55,7 +181,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Metropolis";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4743,7 +4869,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Metropolis";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4828,7 +4954,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Metropolis";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -7715,13 +7841,6 @@ a.text-header:hover, a.text-header:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-@font-face {
-  font-family: 'Metropolis1920';
-  src: url("../fonts/Metropolis1920-Regular.eot");
-  src: url("../fonts/Metropolis1920-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Metropolis1920-Regular.svg#Metropolis1920-Regular") format("svg"), url("../fonts/Metropolis1920-Regular.ttf") format("truetype"), url("../fonts/Metropolis1920-Regular.woff") format("woff"), url("../fonts/Metropolis1920-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal; }
-
 body {
   display: flex;
   flex-direction: column;
@@ -7733,7 +7852,6 @@ main {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: 'Metropolis1920';
   font-weight: bold;
   color: #207486; }
 

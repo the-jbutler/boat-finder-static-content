@@ -3,15 +3,19 @@
 let gulp = require('gulp');
 let sass = require('gulp-sass');
 let rename = require('gulp-rename');
+let wait = require('gulp-wait');
 
 sass.compiler = require('node-sass');
 
 function compileSass(minify) {
-	let options = {};
+	let options = {
+		includePaths: [ './sass/fonts', './sass/fonts/metropolis' ]
+	};
 	if (minify) {
 		options['outputStyle'] = 'compressed'
 	}
-	let pipeline = gulp.src('./sass/**/*.scss')
+	let pipeline = gulp.src('./sass/main.scss')
+		.pipe(wait(1000))
 		.pipe(sass(options).on('error', sass.logError));
 
 	if (minify) {

@@ -15,8 +15,19 @@ main {
 	flex-grow: 1;
 }
 
-.btn-lg {
-	padding: 1rem 1.5rem;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: 'Metropolis1920';
+	font-weight: bold;
+	color: theme-color('primary-dark');
+}
+
+.btn {
+	font-weight: bold;
+
+	&-lg {
+		padding: 1rem 1.5rem;
+	}
 }
 
 .navbar-nav {
@@ -192,28 +203,28 @@ ol.circle-dots {
 .quiz-progress {
 
 	position: relative;
-	top: 1.7rem;
+	top: 1.9rem;
 	border: 1px solid #CCCDCF;
 	border-radius: 4rem;
 	padding: .5rem;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	height: 2.5rem;
+	height: 2rem;
 
 	@include media-breakpoint-up(md) {
 
-		top: 2.4rem;
+		top: 2.6rem;
 		padding: .75rem;
-		height: 3rem;
+		height: 2.5rem;
 	}
 
 	div {
 
-		min-width: 1.25rem;
-		max-width: 1.25rem;
-		min-height: 1.25rem;
-		max-height: 1.25rem;
+		min-width: .75rem;
+		max-width: .75rem;
+		min-height: .75rem;
+		max-height: .75rem;
 		border: 1px solid theme-color('secondary');
 		border-radius: 50%;
 
@@ -224,10 +235,10 @@ ol.circle-dots {
 
 		@include media-breakpoint-up(md) {
 
-			min-width: 1.5rem;
-			max-width: 1.5rem;
-			min-height: 1.5rem;
-			max-height: 1.5rem;
+			min-width: 1rem;
+			max-width: 1rem;
+			min-height: 1rem;
+			max-height: 1rem;
 
 			&:not(:last-child) {
 
@@ -365,24 +376,63 @@ ol.step-progress {
 	}
 }
 
-.quiz-answers {
+.quiz {
 
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 4rem;
+	&-container {
+		min-width: 100%;
+		max-width: 100%;
 
-	div {
+		@include media-breakpoint-up(md) {
+			min-width: 750px;
+			max-width: 750px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			min-width: 850px;
+			max-width: 850px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			min-width: 1000px;
+			max-width: 1000px;
+		}
+	}
+
+	&-answers {
 
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 0 $spacer;
+		justify-content: center;
+		margin-bottom: 4rem;
+
+		div {
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+
+			@include media-breakpoint-up(md) {
+				&:not(:last-of-type) {
+					margin-right: $spacer * 2;
+				}
+			}
+		}
 	}
 }
 
 .boat-answer {
 
 	cursor: pointer;
+
+	img {
+		display: block;
+		border-radius: 4px;
+	}
+
+	strong {
+		display: block;
+		margin: 1rem 0;
+	}
 }
 
 .question-bubble {
@@ -517,6 +567,20 @@ svg {
 		width: 80px;
 		height: 40px;
 
+		path {
+			stroke-width: 4px;
+			fill: transparent;
+		}
+
+		&-sm {
+			width: 40px;
+			height: 30px;
+
+			path {
+				stroke-width: 3px;
+			}
+		}
+
 		&-lg {
 			width: 200px;
 			height: 40px;
@@ -526,11 +590,6 @@ svg {
 			&-#{$name} path {
 				stroke: $color;
 			}
-		}
-
-		path {
-			stroke-width: 4px;
-			fill: transparent;
 		}
 	}
 }

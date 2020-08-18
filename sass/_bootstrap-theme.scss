@@ -2,11 +2,12 @@ $white: #FFF;
 $theme-colors: (
 	"primary": #238084,
 	"primary-light": #EDF6F7,
-	"primary-dark": #155154,
+	"primary-dark": #207486,
 	"secondary": #234084,
 	"secondary-light": #EBEEF5,
-	"secondary-dark": #283960,
-	"dark": #155154
+	"secondary-dark": #152751,
+	"dark": #155154,
+	"header": #4BB9D1
 );
 
 $border-radius: .15rem;
@@ -15,5 +16,20 @@ $border-radius-sm: .15rem;
 
 $navbar-dark-color: $white;
 $navbar-dark-hover-color: rgba($white, .75);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1080px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1080px
+);
 
 @import "node_modules/bootstrap/scss/bootstrap";

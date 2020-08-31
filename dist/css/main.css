@@ -8342,3 +8342,42 @@ svg.waves {
     stroke: #152751; }
   svg.waves-header path {
     stroke: #4BB9D1; }
+
+.graph[data-legend-left] .legend-left, .graph[data-legend-right] .legend-right, .graph[data-legend-top] .legend-top, .graph[data-legend-bottom] .legend-bottom {
+  color: #234084;
+  background-color: #EBEEF5;
+  display: inline-block;
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .25rem .5rem; }
+
+.graph[data-legend-left] {
+  border-left: 1px solid black; }
+  .graph[data-legend-left] .legend-left {
+    transform: translateX(-50%) rotate(-90deg);
+    transform-origin: center;
+    top: 50%;
+    left: 1rem; }
+
+.graph[data-legend-right] {
+  border-right: 1px solid black; }
+  .graph[data-legend-right] .legend-right {
+    transform: translateX(50%) rotate(-90deg);
+    transform-origin: center;
+    top: 50%;
+    right: 1rem; }
+
+.graph[data-legend-top] {
+  border-top: 1px solid black; }
+  .graph[data-legend-top] .legend-top {
+    left: 50%;
+    top: -1rem;
+    transform: translateX(-50%); }
+
+.graph[data-legend-bottom] {
+  border-bottom: 1px solid black; }
+  .graph[data-legend-bottom] .legend-bottom {
+    left: 50%;
+    bottom: -1rem;
+    transform: translateX(-50%); }

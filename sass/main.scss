@@ -600,3 +600,66 @@ svg {
 // 	background-image: none;
 // 	background-color: theme-color('primary-light');
 // }
+
+%graph-legend-shared {
+	color: theme-color('secondary');
+	background-color: theme-color('secondary-light');
+	display: inline-block;
+	position: absolute;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: .25rem .5rem;
+}
+
+.graph {
+
+	&[data-legend-left] {
+
+		border-left: 1px solid black;
+
+		.legend-left {
+			@extend %graph-legend-shared;
+			transform: translateX(-50%) rotate(-90deg);
+			transform-origin: center;
+			top: 50%;
+            left: 1rem;
+		}
+	}
+
+	&[data-legend-right] {
+
+		border-right: 1px solid black;
+
+		.legend-right {
+			@extend %graph-legend-shared;
+			transform: translateX(50%) rotate(-90deg);
+			transform-origin: center;
+			top: 50%;
+            right: 1rem;
+		}
+	}
+
+	&[data-legend-top] {
+
+		border-top: 1px solid black;
+	
+		.legend-top {
+			@extend %graph-legend-shared;
+			left: 50%;
+			top: -1rem;
+			transform: translateX(-50%);
+		}
+	}
+
+	&[data-legend-bottom] {
+
+		border-bottom: 1px solid black;
+	
+		.legend-bottom {
+			@extend %graph-legend-shared;
+			left: 50%;
+			bottom: -1rem;
+			transform: translateX(-50%);
+		}
+	}
+}

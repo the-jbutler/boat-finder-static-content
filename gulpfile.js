@@ -36,4 +36,6 @@ function watchSass() {
 
 gulp.task('start', gulp.series(() => compileSass(false), watchSass));
 
-gulp.task('build', gulp.series(() => compileSass(true)));
+gulp.task('build', gulp.series(() => compileSass(false)));
+
+gulp.task('dist', gulp.series(() => compileSass(true)));

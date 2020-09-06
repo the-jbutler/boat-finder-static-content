@@ -1,0 +1,13 @@
+{
+	"short_name": "myBoatGuru",
+	"name": "myBoatGuru",
+    "icons": [{
+        "src": "google-touch-icon.png",
+        "sizes": "512x512"
+    }],
+	"start_url": "index.html",
+	"display": "standalone",
+	"theme_color": "#4BB9D1",
+	"background_color": "#ffffff"
+  }
+  

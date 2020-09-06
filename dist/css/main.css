@@ -7860,6 +7860,11 @@ h1, h2, h3, h4, h5, h6,
   .btn-lg, .btn-group-lg > .btn {
     padding: 1rem 1.5rem; }
 
+.navbar-brand img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: .25rem; }
+
 .navbar-nav .nav-item {
   margin-left: 0.5rem;
   display: inline-block; }

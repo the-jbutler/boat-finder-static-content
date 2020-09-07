@@ -28,34 +28,37 @@ h1, h2, h3, h4, h5, h6,
 	}
 }
 
-.navbar-brand {
+.navbar {
 
-	img {
-		width: 2rem;
-		height: 2rem;
-		margin-right: .25rem;
-	}
-}
+	&-brand {
 
-.navbar-nav {
-
-	.nav-item {
-
-		margin-left: $spacer / 2;
-		display: inline-block;
-
-		@include media-breakpoint-up(lg) {
-			&:not(:first-child)::before {
-
-				content: '\2022';
-				color: theme-color("light");
-				margin-right: $spacer / 2;
-			}
+		img {
+			width: 2rem;
+			height: 2rem;
+			margin-right: .25rem;
 		}
+	}
 
-		.nav-link {
+	&-nav {
 
+		.nav-item {
+	
+			margin-left: $spacer / 2;
 			display: inline-block;
+	
+			@include media-breakpoint-up(lg) {
+				&:not(:first-child)::before {
+	
+					content: '\2022';
+					color: theme-color("light");
+					margin-right: $spacer / 2;
+				}
+			}
+	
+			.nav-link {
+	
+				display: inline-block;
+			}
 		}
 	}
 }

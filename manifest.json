@@ -1,10 +1,18 @@
 {
 	"short_name": "myBoatGuru",
 	"name": "myBoatGuru",
-	"icons": [{
-		"src": "google-touch-icon.png",
-		"sizes": "512x512"
-	}],
+	"icons": [
+		{
+			"src": "img/android-chrome-256x256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "img/android-chrome-192x192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		}
+	],
 	"start_url": "index.html",
 	"display": "standalone",
 	"theme_color": "#4BB9D1",

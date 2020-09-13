@@ -7861,8 +7861,7 @@ h1, h2, h3, h4, h5, h6,
     padding: 1rem 1.5rem; }
 
 .navbar-brand img {
-  width: 2rem;
-  height: 2rem;
+  height: 3rem;
   margin-right: .25rem; }
 
 .navbar-nav .nav-item {

@@ -526,10 +526,17 @@ ol.step-progress {
 	@extend %circle-dots;
 
 	> div {
-		@extend .mx-2;
+		min-width: 20%;
 		
 		@include media-breakpoint-up(lg) {
 			max-width: 20%;
+
+			&:not(:first-child) {
+				padding-left: .5rem;
+			}
+			&:not(:last-child) {
+				padding-right: .5rem;
+			}
 		}
 
 		> .header {
@@ -541,7 +548,7 @@ ol.step-progress {
 				min-height: 1.5rem;
 				max-height: 1.5rem;
 				margin-right: .5rem;
-				line-height: 1.4rem;
+				line-height: 1.6rem;
 			}
 
 			> a:hover {
@@ -549,10 +556,22 @@ ol.step-progress {
 			}
 		}
 
+		.boat-image {
+			height: 10rem;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+		
+			@include media-breakpoint-down(lg) {
+				width: 10rem;
+			}
+		}
+
 		.short-info {
 			display: block;
 			margin-top: $spacer / 4;
 			margin-bottom: $spacer / 2;
+			overflow-wrap: break-word;
 		}
 	}
 }

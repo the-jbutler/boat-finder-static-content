@@ -61,7 +61,7 @@
 			</div>
 			<div class="container pt-3 pt-md-4 mb-5">
 				<h2 class="mb-4 mb-lg-5">Compare your chosen boats</h2>
-				<div class="choose-boats d-flex flex-column flex-lg-row pb-4 circle-dots-primary-dark"></div>
+				<div class="choose-boats d-flex flex-column flex-lg-row justify-content-center align-items-stretch pb-4 circle-dots-primary-dark"></div>
 				<h3 class="text-primary-dark mt-3">Comparison by</h3>
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-4 p-3">
@@ -118,16 +118,21 @@
 
 				let chooseBoatTemplate = document.getElementById('choose-boat-template');
 				let chooseBoatEl = document.querySelector('.choose-boats');
+				let loreum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque contra est, ac dicitis; Quis istud, quaeso, nesciebat? Sed tamen intellego quid velit. Ad eas enim res ab Epicuro praecepta dantur.`;
+				let ipsums = loreum.split(/\s/g);
 				for (var i = 1; i <= 5; i++) {
 					let tpl = chooseBoatTemplate.content.firstElementChild.cloneNode(true);
-					let imgSrc = `https://picsum.photos/500/300?random=${i}`;
-					tpl.querySelector('img').setAttribute('src', imgSrc);
+					let imgSrc = `https://picsum.photos/600/600?random=${i}`;
+					tpl.querySelector('.boat-image').style['background-image'] = `url(${imgSrc})`;
+					//tpl.querySelector('.boat-image').setAttribute('src', imgSrc);
+					let len = Math.floor((Math.random() * 20) + 1);
+					tpl.querySelector('.short-info').innerText = ipsums.slice(0, len).join(' ');
 					chooseBoatEl.append(tpl);
 				}
 			});
 		</script>
 		<template id="choose-boat-template">
-			<div class="w-20">
+			<div class="d-flex flex-column mt-2 mt-lg-0">
 				<div class="header mb-2 d-flex align-items-baseline circle-dots">
 					<span class="circle-dot"></span>
 					<strong class="text-primary-dark flex-grow-1">Catana 47</strong>
@@ -135,13 +140,13 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="row no-gutters align-items-between">
-					<div class="col-6 col-sm-4 col-lg-12">
-						<img class="img-fluid pr-4 pr-lg-0" src="">
+				<div class="flex-grow-1 d-flex flex-lg-column pb-2 border-bottom">
+					<div class="mr-4 mr-lg-0">
+						<div class="boat-image"></div>
 					</div>
-					<div class="col col-lg-12 d-flex flex-column">
+					<div class="flex-grow-1 d-flex flex-column">
 						<small class="short-info flex-grow-1">The benchmark for long distance cruising</small>
-						<div class="row justify-content-between">
+						<div class="row no-gutters justify-content-between">
 							<strong class="col-auto">Length</strong>
 							<strong class="col-auto">40&quot;</strong>
 							<div class="w-100"></div>
@@ -152,7 +157,6 @@
 							<strong class="col-auto">&dollar;300,000</strong>
 						</div>
 					</div>
-					<div class="w-100 mt-2 border-bottom"></div>
 				</div>
 			</div>
 		</template>

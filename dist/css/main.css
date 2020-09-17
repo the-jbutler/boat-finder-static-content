@@ -6257,8 +6257,7 @@ button.bg-header:focus {
   margin-top: 0.5rem !important; }
 
 .mr-2,
-.mx-2,
-.choose-boats > div {
+.mx-2 {
   margin-right: 0.5rem !important; }
 
 .mb-2,
@@ -6266,8 +6265,7 @@ button.bg-header:focus {
   margin-bottom: 0.5rem !important; }
 
 .ml-2,
-.mx-2,
-.choose-boats > div {
+.mx-2 {
   margin-left: 0.5rem !important; }
 
 .m-3 {
@@ -8230,25 +8228,37 @@ ol.step-progress {
 .force-front {
   z-index: 1200; }
 
-@media (min-width: 992px) {
-  .choose-boats > div {
-    max-width: 20%; } }
-
-.choose-boats > div > .header::before {
-  min-width: 1.5rem;
-  max-width: 1.5rem;
-  min-height: 1.5rem;
-  max-height: 1.5rem;
-  margin-right: .5rem;
-  line-height: 1.4rem; }
-
-.choose-boats > div > .header > a:hover {
-  text-decoration: none; }
-
-.choose-boats > div .short-info {
-  display: block;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem; }
+.choose-boats > div {
+  min-width: 20%; }
+  @media (min-width: 992px) {
+    .choose-boats > div {
+      max-width: 20%; }
+      .choose-boats > div:not(:first-child) {
+        padding-left: .5rem; }
+      .choose-boats > div:not(:last-child) {
+        padding-right: .5rem; } }
+  .choose-boats > div > .header::before {
+    min-width: 1.5rem;
+    max-width: 1.5rem;
+    min-height: 1.5rem;
+    max-height: 1.5rem;
+    margin-right: .5rem;
+    line-height: 1.6rem; }
+  .choose-boats > div > .header > a:hover {
+    text-decoration: none; }
+  .choose-boats > div .boat-image {
+    height: 10rem;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    @media (max-width: 1079.98px) {
+      .choose-boats > div .boat-image {
+        width: 10rem; } }
+  .choose-boats > div .short-info {
+    display: block;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    overflow-wrap: break-word; }
 
 .stick-above-footer {
   position: sticky;

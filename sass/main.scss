@@ -704,3 +704,29 @@ svg {
 		}
 	}
 }
+
+.loading-dots {
+
+	&::after {
+		content: '';
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: bottom;
+		animation: ellipsis 1200ms infinite alternate;
+	}
+}
+
+@keyframes ellipsis {
+	0% {
+		content: '';
+	}
+	33% {
+		content: '.';
+	}
+	66% {
+		content: '..';
+	}
+	100% {
+		content: '...';
+	}
+}

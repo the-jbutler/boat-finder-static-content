@@ -438,11 +438,13 @@ ol.step-progress {
 		border-radius: 4px;
 		min-height: 200px;
 		max-height: 200px;
+		object-fit: cover;
 	}
 
 	strong {
 		display: block;
 		margin: 1rem 0;
+		text-align: center;
 	}
 }
 
@@ -729,4 +731,14 @@ svg {
 	100% {
 		content: '...';
 	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }

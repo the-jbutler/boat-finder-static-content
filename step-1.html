@@ -72,42 +72,8 @@
 					<div class="col-12 col-lg-4 order-1 order-lg-2 bg-secondary-light">
 						<div class="h-100 py-4 px-3 d-flex flex-column">
 							<p><strong>We have eliminated all the boats that are not right for you because they are&hellip;</strong></p>
-							<button class="btn btn-block btn-light mt-2 mb-4" type="button" data-toggle="collapse" data-target=".feature-filters" aria-controls="feature-filters" aria-expanded="false" aria-label="Show filter reasons">
-								Show Filter Reasons
-							</button>
-							<div class="feature-filters mt-2 mb-4 collapse">
-								<div class="d-flex flex-wrap">
-									<small>
-										Too big
-										<!-- <button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button> -->
-									</small>
-									<small>
-										Too small
-										<!-- <button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button> -->
-									</small>
-									<small>
-										Waaaaay out of your price range
-										<!-- <button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button> -->
-									</small>
-									<small>
-										Need Olga Kurylenko as crew
-										<!-- <button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button> -->
-									</small>
-									<small>
-										Only good for entertaining &hyphen; can’t sail for shit
-										<!-- <button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button> -->
-									</small>
-								</div>
+							<div class="feature-filters mt-2 mb-4">
+								<div class="d-flex flex-wrap"></div>
 							</div>
 							<button type="button" name="next-page" class="btn btn-block btn-lg btn-primary-dark mt-auto">Next Step</button>
 						</div>
@@ -126,12 +92,98 @@
 				</span>
 			</div>
 		</footer>
+		<template id="filter-reason-template">
+			<small>
+				<span class="collapse show">Example Text</span>
+				<!-- <button type="button" class="close" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button> -->
+			</small>
+		</template>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 		<script>
+			let WordLength = {
+				canvas: undefined,
+				calculate: (text, font) => {
+					canvas = WordLength.canvas || (WordLength.cavas = document.createElement('canvas'));
+					let context = canvas.getContext('2d');
+					context.font = font;
+					var textMetrics = context.measureText(text);
+					return `${textMetrics.width}px`;
+				},
+				getFont: (el) => {
+					let fontSize = window.getComputedStyle(el, null).getPropertyValue('font-size');
+					return `regular ${fontSize} Metropolis`;
+				}
+			};
+
 			$(document).ready(function() {
+				let filterCount = 5;
+				let maxIpsums = 15;
+				let collapsedWordCount = 8;
+				var minSmallHeight;
+
+				(function() {
+					let filterReasonTemplate = document.getElementById('filter-reason-template');
+					let filterReasons = document.querySelector('.feature-filters');
+					let loreum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque contra est, ac dicitis; Quis istud, quaeso, nesciebat? Sed tamen intellego quid velit. Ad eas enim res ab Epicuro praecepta dantur.`;
+					let ipsums = loreum.split(/\s+/g);
+
+					for (var i = 1; i <= filterCount; i++) {
+						let tpl = filterReasonTemplate.content.cloneNode(true);
+						let len = Math.floor((Math.random() * maxIpsums) + 1);
+						tpl.querySelector('span').innerText = ipsums.slice(0, len).join(' ');
+						filterReasons.querySelector('div').append(tpl);
+					}
+				})();
+
+				(function() {
+					let filterReasonsContainer = document.querySelector('.feature-filters');
+					let maxWidth = filterReasonsContainer.scrollWidth;
+
+					function getComputedStyleFloat(el, property) {
+						let result = window.getComputedStyle(el, null).getPropertyValue(property).replace(/(\d+(?:\.(?:\d+))?).*/, '$1');
+						return parseFloat(result);
+					}
+
+					filterReasonsContainer.querySelectorAll('small').forEach(el => {
+						let textSpan = el.querySelector('span.collapse');
+						let smallHeight = getComputedStyleFloat(el, 'height');
+						let smallPadding = {
+							top: getComputedStyleFloat(el, 'padding-top'),
+							bottom: getComputedStyleFloat(el, 'padding-bottom')
+						};
+						let smallBorder = {
+							top: getComputedStyleFloat(el, 'border-top-width'),
+							bottom: getComputedStyleFloat(el, 'border-bottom-width')
+						}
+
+						let fontSize = getComputedStyleFloat(textSpan, 'line-height');
+
+						minSmallHeight = fontSize + smallPadding.top + smallPadding.bottom + smallBorder.top + smallBorder.bottom;
+
+						if (smallHeight > minSmallHeight) {
+							el.classList.add('collapsable');
+						}
+					});
+				})();
+
 				$('.feature-filters .close').click(function() {
 					$(this).parents('small').remove();
+				});
+
+				$('.feature-filters small.collapsable').click(function(e) {
+					let container = e.currentTarget;
+					let target = e.currentTarget.querySelector('span.collapse');
+
+					if (target.classList.contains('collapse') && target.classList.contains('show')) {
+						container.style.maxHeight = `${minSmallHeight}px`;
+						target.classList.remove('show');
+					} else {
+						container.style.maxHeight = '';
+						target.classList.add('show');
+					}
 				});
 
 				$('[name="next-page"]').click(function() {

@@ -500,13 +500,30 @@ ol.step-progress {
 }
 
 .feature-filters small {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
+	max-width: 100%;
 	background-color: color('white');
 	border: 1px solid theme-color('dark');
-	padding: .25rem .5rem;
 	margin-right: .25rem;
+	padding: .25rem .5rem;
+	padding-left: 0;
 	margin-bottom: .25rem;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	cursor: pointer;
+
+	& > span {
+		display: inline-block !important;
+		margin: 0 .5rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		&.collapse:not(.show) {
+			overflow-wrap: break-word;
+			white-space: nowrap;
+		}
+	}
 
 	.close {
 		margin-left: .5rem;

@@ -653,13 +653,21 @@ svg {
 // }
 
 %graph-legend-shared {
+	position: absolute;
+	display: inline-flex;
+	justify-content: space-around;
+}
+%graph-legend-shared-text {
 	color: theme-color('secondary');
 	background-color: theme-color('secondary-light');
 	display: inline-block;
-	position: absolute;
 	text-transform: uppercase;
 	font-weight: bold;
 	padding: .25rem .5rem;
+
+	@include media-breakpoint-down(sm) {
+		font-size: .75rem;
+	}
 }
 
 .graph {
@@ -675,10 +683,15 @@ svg {
 
 		.legend-left {
 			@extend %graph-legend-shared;
-			transform: translateX(-50%) rotate(-90deg);
-			transform-origin: center;
-			top: 50%;
-            left: 1rem;
+			height: 100%;
+			flex-direction: column-reverse;
+
+
+			& > span {
+				@extend %graph-legend-shared-text;
+				transform: translateX(-50%) rotate(-90deg);
+				transform-origin: center;
+			}
 		}
 	}
 
@@ -688,10 +701,15 @@ svg {
 
 		.legend-right {
 			@extend %graph-legend-shared;
-			transform: translateX(50%) rotate(-90deg);
-			transform-origin: center;
-			top: 50%;
-            right: 1rem;
+			height: 100%;
+			right: 1rem;
+			flex-direction: column-reverse;
+
+			& > span {
+				@extend %graph-legend-shared-text;
+				transform: translateX(50%) rotate(-90deg);
+				transform-origin: center;
+			}
 		}
 	}
 
@@ -701,12 +719,16 @@ svg {
 	
 		.legend-top {
 			@extend %graph-legend-shared;
-			left: 50%;
+			width: 100%;
+			padding-right: 2rem;
 			top: -1rem;
-			transform: translateX(-50%);
 		
 			@include media-breakpoint-down(md) {
 				top: .5rem;
+			}
+
+			& > span {
+				@extend %graph-legend-shared-text;
 			}
 		}
 	}
@@ -717,9 +739,13 @@ svg {
 	
 		.legend-bottom {
 			@extend %graph-legend-shared;
-			left: 50%;
+			width: 100%;
+			padding-right: 2rem;
 			bottom: -1rem;
-			transform: translateX(-50%);
+
+			& > span {
+				@extend %graph-legend-shared-text;
+			}
 		}
 	}
 }

@@ -8222,7 +8222,8 @@ ol.step-progress {
   padding-left: 0;
   margin-bottom: .25rem;
   -moz-user-select: none;
-  -webkit-user-select: none; }
+  -webkit-user-select: none;
+  cursor: pointer; }
   .feature-filters small > span {
     display: inline-block !important;
     margin: 0 .5rem;

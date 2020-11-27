@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="dist/css/main.css" >
+		<!-- generics -->
+		<link rel="icon" href="img/favicon.svg">
+		<link rel="alternate icon" href="img/favicon.ico">
+		<link rel="icon" href="img/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" href="img/favicon-32x32.png" sizes="32x32">
+		<!-- Android -->
+		<link rel="shortcut icon" sizes="192x192" href="/path/to/android-chrome-192x192.png">
+		<link rel="shortcut icon" sizes="256x256" href="/path/to/android-chrome-256x256.png">
+		<!-- iOS -->
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png" sizes="180x180">
+		<link rel="mask-icon" href="img/favicon.svg" color="#ffffff">
+		<link rel="manifest" href="manifest.json" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#4BB9D1">
+		<title>myBoatGuru</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-header py-3 py-3">
+				<div class="container">
+					<div class="d-block d-lg-none"></div>
+					<a class="navbar-brand" href="index.html" title="My Boat Guru Homepage">
+						<img src="img/myboat.png" alt="My Boat Guru Logo">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="header-navbar">
+						<ul class="navbar-nav ml-auto text-uppercase">
+							<li class="nav-item">
+								<a class="nav-link" href="boat-quiz-2.html" title="Find Your Boat">Find Your Boat</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about-us.html" title="About Us">About Us</a>
+							</li>
+							<!-- <li class="nav-item">
+								<a class="nav-link" href="#" title="Useful Tools">Useful Tools</a>
+							</li> -->
+							<li class="nav-item">
+								<a class="nav-link" href="#" title="Send Feedback">Feedback</a>
+							</li>
+						</ul>
+						<!-- <button type="button" class="login-button d-block d-lg-none btn btn-primary-dark btn-block text-uppercase">Login</button>
+						<button type="button" class="login-button d-none d-lg-inline-block ml-lg-4 btn btn-primary-dark text-uppercase">Login</button> -->
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-12 col-md-8 pt-md-4 my-3 mt-md-4 d-flex">
+							<span class="h1 align-self-center">3 mistakes new boat buyers make</span>
+						</div>
+						<div class="d-none d-md-block col-md-4">
+							<div class="offset-down">
+								<img src="https://picsum.photos/300/300?random=1" class="img-fluid" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="bg-secondary text-light pt-3 pt-md-5 pb-3">
+				<div class="container d-flex justify-content-start">
+					<ol class="circle-dots circle-dots-light mb-0">
+						<li><span>They buy too big</span></li>
+						<li><span>They buy too fast</span></li>
+						<li><span>They buy too fat</span></li>
+					</ol>
+				</div>
+			</section>
+			<section class="py-3 py-md-5">
+				<div class="container text-center">
+					<span class="d-block h1 mr-3 align-middle">Find your perfect boat</span>
+					<button type="button" class="d-block d-md-none btn btn-primary btn-lg btn-block text-uppercase mt-2">Start</button>
+					<button type="button" class="d-none d-md-inline-block btn btn-lg btn-primary text-uppercase">Start</button>
+				</div>
+			</section>
+		</main>
+		<footer class="bg-secondary text-light">
+			<div class="container py-3">
+				<svg class="waves waves-sm waves-light" xmlns="http://www.w3.org/2000/svg">
+					<path d="M 5 10 q 3 -1, 6 2 q 5 5, 12 0 t 12 0 q 5 5,12 0 q 3 -3, 6 -2" />
+					<path d="M 5 20 q 3 -1, 6 2 q 5 5, 12 0 t 12 0 q 5 5,12 0 q 3 -3, 6 -2" />
+				</svg>
+				<span class="align-middle">
+					Copyright Boatfinder 2020
+				</span>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				$('#intro-modal').modal({
+					backdrop: 'static',
+					keyboard: false
+				});
+
+				$('.toggle-visibility').click(function() {
+					var $this = $(this);
+					$this.parents('.modal-content').hide();
+					$($this.data('target')).show();
+					$('#intro-modal').modal('handleUpdate');
+				});
+
+				$('.close-modal').click(function() {
+					$(this).parents('.modal').modal('hide');
+				});
+
+				$('.boat-answer').click(function() {
+					window.location.href = 'boat-quiz-2.html';
+				});
+			});
+		</script>
+	</body>
+</html>
